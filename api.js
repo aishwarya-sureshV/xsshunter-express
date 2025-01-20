@@ -24,6 +24,7 @@ const get_secure_random_string = require('./utils.js').get_secure_random_string;
 const screenshotsDir = process.env.SCREENSHOTS_DIR;
 
 if (!screenshotsDir) {
+  console.log(process.env.SCREENSHOTS_DIR);
   console.error('ERROR: SCREENSHOTS_DIR is not set in the environment.');
   process.exit(1); // Stop the application if the variable is missing
 }
