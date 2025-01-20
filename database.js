@@ -5,17 +5,22 @@ const get_secure_random_string = require('./utils.js').get_secure_random_string;
 const get_hashed_password = require('./utils.js').get_hashed_password;
 const constants = require('./constants.js');
 
-const sequelize = new Sequelize(
-	process.env.DATABASE_NAME,
-	process.env.DATABASE_USER,
-	process.env.DATABASE_PASSWORD,
-	{
-		host: process.env.DATABASE_HOST,
-		dialect: 'postgres',
-		benchmark: true,
-		logging: false
-	},
-);
+// const sequelize = new Sequelize(
+// 	process.env.DATABASE_NAME,
+// 	process.env.DATABASE_USER,
+// 	process.env.DATABASE_PASSWORD,
+// 	{
+// 		host: process.env.DATABASE_HOST,
+// 		dialect: 'postgres',
+// 		benchmark: true,
+// 		logging: false
+// 	},
+// );
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+	dialect: 'postgres',
+	logging: false,
+  });
 
 const Model = Sequelize.Model;
 
