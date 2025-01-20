@@ -21,13 +21,6 @@ const validate = require('express-jsonschema').validate;
 const get_hashed_password = require('./utils.js').get_hashed_password;
 const get_secure_random_string = require('./utils.js').get_secure_random_string;
 
-const screenshotsDir = process.env.SCREENSHOTS_DIR;
-
-if (!screenshotsDir) {
-  console.error('ERROR: SCREENSHOTS_DIR is not set in the environment.');
-  process.exit(1); // Stop the application if the variable is missing
-}
-
 const SCREENSHOTS_DIR = path.resolve(process.env.SCREENSHOTS_DIR);
 
 var sessions_middleware = false;
