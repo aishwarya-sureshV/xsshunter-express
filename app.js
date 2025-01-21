@@ -23,6 +23,10 @@ app.listen(port, '0.0.0.0', () => {
   console.log(`Server is listening on port ${port}`);
 });
 
+app.get('/', (req, res) => {
+	res.send('Welcome to the homepage!');
+  });
+  
 function set_secure_headers(req, res) {
 	res.set("X-XSS-Protection", "mode=block");
 	res.set("X-Content-Type-Options", "nosniff");
@@ -79,7 +83,7 @@ async function get_app_server() {
 	app.use((req, res) => {
 		res.status(404).send(`Route not found: ${req.originalUrl}`);
 	});
-	
+
 	app.use(bodyParser.json());
 
     // Set security-related headers on requests
