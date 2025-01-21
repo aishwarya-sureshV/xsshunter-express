@@ -30,6 +30,8 @@ COPY templates /app/templates
 # Expose both HTTP and HTTPS ports
 EXPOSE 80
 EXPOSE 443
+EXPOSE 8080
+CMD ["node", "app.js"]
 
 # Start the server
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
