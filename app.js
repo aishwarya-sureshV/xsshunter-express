@@ -80,10 +80,12 @@ async function get_app_server() {
 		}).end();
     });
 
-	app.use((req, res) => {
-		res.status(404).send(`Route not found: ${req.originalUrl}`);
-	});
+	app.use((req, res, next) => {
+		console.log(`Incoming request: ${req.method} ${req.originalUrl}`);
+		next();
+	  });
 
+	  
 	app.use(bodyParser.json());
 
     // Set security-related headers on requests
