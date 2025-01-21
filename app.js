@@ -16,6 +16,13 @@ const api = require('./api.js');
 const validate = require('express-jsonschema').validate;
 const constants = require('./constants.js');
 
+const port = process.env.PORT || 3000;
+const app = express();
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is listening on port ${port}`);
+});
+
 function set_secure_headers(req, res) {
 	res.set("X-XSS-Protection", "mode=block");
 	res.set("X-Content-Type-Options", "nosniff");
