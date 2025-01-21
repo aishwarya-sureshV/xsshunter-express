@@ -36,7 +36,6 @@ services:
       # FEEL FREE, BUT KNOW WHAT YOU'RE DOING.
       # Where XSS screenshots are stored
       - SCREENSHOTS_DIR=/app/payload-fire-images
-      - DATABASE_URL=postgresql://postgres:MfSBHqrCbWXmnHAcxCGNezfMSjVvfQxE@autorack.proxy.rlwy.net:28345/railway
       - DATABASE_NAME=xsshunterexpress
       - DATABASE_USER=xsshunterexpress
       - DATABASE_PASSWORD=xsshunterexpress
