@@ -16,7 +16,7 @@ const api = require('./api.js');
 const validate = require('express-jsonschema').validate;
 const constants = require('./constants.js');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const app = express();
 
 app.listen(port, '0.0.0.0', () => {
